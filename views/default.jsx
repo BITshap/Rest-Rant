@@ -9,8 +9,13 @@ function Def (html) {
                 <link rel="stylesheet" href="/style.css"/>
             </head>
             <body>
+                <div className="content">
+                <div className="content-inside">
                 {html.children}
+                </div>
+                </div>
             </body>
+            <footer className="Footer"><a href="https://www.linkedin.com/in/nick-shapoff-18974421a/">My LinkedIn</a></footer>
         </html>
     )
   }
