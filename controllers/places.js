@@ -1,20 +1,7 @@
 const router = require('express').Router()
+const places = require('../models/places')
 
 router.get('/', (req, res) => {
-    let places = [{
-        name: 'CPK',
-        city: 'Los Angeles',
-        state: 'CA',
-        cuisines: 'American, Comfort',
-        pic: 'https://assets.simon.com/tenantlogos/829.png'
-      }, {
-        name: 'Coding Cat Cafe',
-        city: 'Phoenix',
-        state: 'AZ',
-        cuisines: 'Coffee, Bakery',
-        pic: 'https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/02/24115640/Untitled-design-2022-02-18T123717.280.jpg'
-      }]
-      
     res.render('places/index', {places})
 })
 
@@ -22,6 +9,19 @@ router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
+router.post('/', (req, res) => {
+  if(!req.body.pic) {
+    req.body.pic = 'http://placekitten.com/400/400'
+  }
+  if (!req.body.city) {
+    req.body.city = 'Anytown'
+  }
+  if (!req.body.state) {
+    req.body.state ='USA'
+  }
+  places.push(req.body)
+  res.redirect('/places')
+})
 
 
 module.exports = router
