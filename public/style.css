@@ -63,3 +63,8 @@ html, body {
     color: pink;
     text-decoration: none;
   }
+
+  h2{
+    color: powderblue;
+    text-align: center;
+  }
