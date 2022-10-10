@@ -9,6 +9,17 @@ router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
+router.get('/:id', (req, res) => {
+  let id = Number(req.params.id)
+  if (isNaN(id)) {
+    res.render('error404')
+  } else if (!places[id]) {
+    res.render('error404')
+  } else {
+  res.render('places/show', {place: places[id]})
+  }
+})
+
 router.post('/', (req, res) => {
   if(!req.body.pic) {
     req.body.pic = 'http://placekitten.com/400/400'
