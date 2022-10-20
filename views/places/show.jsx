@@ -13,7 +13,7 @@ function show (data){
                 </div>
                 <div>
                 <h2>Description</h2>
-                <p>We are in {data.place.state}, {data.place.city}. Are speciality is {data.place.cuisines}!</p>
+                <p>{data.place.showEstablished()}</p>
                 </div>
                 <div>
                     <a href={`/places/${data.id}/edit`} className="btn btn-warning">
