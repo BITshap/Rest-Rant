@@ -42,7 +42,6 @@ function new_form (data){
                     </div>
                     <input className="btn btn-primary" type="submit" value="Add Place"/>
                 </form>
-                
             </main>
         </Def>
     )
