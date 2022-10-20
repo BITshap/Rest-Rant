@@ -36,12 +36,11 @@ function show (data){
                 <h2>Description</h2>
                 <p>{data.place.showEstablished()}</p>
                 </div>
-                
                 <div>
-                    <a href={`/places/${data.id}/edit`} className="btn btn-warning">
+                    <a href={`/places/${data.place.id}/edit`} className="btn btn-warning">
                         Edit
                     </a>
-                    <form method="POST" action={`/places/${data.id}?_method=DELETE`}>
+                    <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}>
                         <button type="submit" className="btn btn-danger">
                             Delete
                         </button>
@@ -51,21 +50,21 @@ function show (data){
                     <h2>Comments</h2>
                     {comments}
                 </div>
-                <form method="POST" action={`/places/:id/comment`}>
+                <form method="POST" action={`/places/${data.place.id}/comment?_method=POST`}>
                 <div className="form-group">
                         <label htmlFor="Author">Author</label>
-                        <input className="form-control" id="Author" name="Author"/>
+                        <input className="form-control" id="author" name="author"/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="Content">Content</label>
-                        <textarea className="form-control" id="Content" name="Content"/>
+                        <label htmlFor="content">Content</label>
+                        <textarea className="form-control" id="content" name="content"/>
                     </div>  
                     <div className="form-group">
                     <label for="stars" class="form-label">Star Rating</label>
                     <input type="range" step="0.5" min="1" max="5"class="form-range" name="stars" id="stars"/>
                     </div>
                     <div class="form-check">
-                    <label for="rant">Rant?</label>
+                    <label for="rant"> Rant? </label>
                         <input class="form-check-input" type="checkbox" value="rant" name="rant"  checked/>
                         </div>
                     <input className="btn btn-primary" type="submit" value="Add Comment"/>
