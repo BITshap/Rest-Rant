@@ -1,6 +1,6 @@
 # Project REST-Rant
 
-REST-Rant is an app where users can review restaurants.
+REST-Rant is an app where users can review restaurants! Crud application using restful routes, js, express.js, mongoDB, (Full-Stack application deployed on PAAS heroku).
 
 ## Routes
 
